@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Open-Vocabulary Object Detection and Part Segmentation: Supplementary Material</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<button style="position: fixed;right: 15px;top:  80%;height: 60px;width: 110px; font-size: 18px;" type="button"><a href="#top">Back to top</a></button> 
+<div class="container">
+  <h1 align="center">Open-Vocabulary Object Detection and Part Segmentation</h1>
+  <h2 align="center">Supplementary Material</h2>
+	
+  <p align="center">&nbsp;</p>
+	<a href="#top"></a>
+  <ul>
+	<li><a href="#datasets">Part Segmentation Datasets</a></li>
+	<li><a href="#OVODmethod">Previous Open-Vocabulary Object Detection Methods</a></li>
+    <li><a href="#visualization">Visualization of Open-Vocabulary Part Segmentation</a></li>
+    <li><a href="#applications">Applications of Open-Vocabulary Part Segmentation</a></li>
+	<li><a href="assets/revisedVLPart.pdf" target="_blank">Revised Section 4: Our Method (PDF)</a></li>
+	<li><a href="assets/revisedVLPart.pdf" target="_blank">Revised Section 5: Experiment (PDF)</a></li>
+	<li><a href="https://github.com/anonymous-vlpart/VLPart" target="_blank">Source Code</a></li>
+  </ul>
+<p>&nbsp;</p>
+<hr>
+
+
+
+<h2 align="left"><a name="datasets" id="datasets"></a>Part Segmentation Datasets</h2>
+<p align="left">Recent advances in open-vocabulary object detection have made surprising development in enlarging the number of object categories from a pre-determined set by training datasets to any object in the open world. This is a crucial step for the vision system to make effect in the real world. Towards the next step, for a deeper understanding to object structure, mobility, functionality, and practical applications such as behavior analysis, robotics manipulation, image-editing, only object-level perception is not sufficient, while the fine-grained recognition ability of part segmentation is necessary. We show three sources of part segmentation datasets, including PartImageNet, Pascal Part and PACO. </p>
+<table  width="1200" align="center">
+<tbody>
+    <tr>
+        <th> <a href="assets/dataset.png" target="_blank"><img width="1200" src = "assets/dataset.png"/> </a></th>
+    </tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+
+
+<h2 align="left"><a name="OVODmethod" id="OVODmethod"></a>Previous Open-Vocabulary Object Detection Methods</h2>
+<p align="left">Since a part is the fine-grained version of an object, an intuitive idea is to directly apply existing open-vocabulary object detection methods to solve the part detection/segmentation task, including RegionCLIP(only box), Detic and VLDet. However, they do not show good generalization on part-level recognition. Although conceptually similar to open-vocabulary object detection, localizing and classifying the fine-grained object parts are essentially more challenging. </p>
+<table  width="1200" align="center">
+<tbody>
+    <tr>
+        <th> <a href="assets/ovod.png" target="_blank"><img width="1200" src = "assets/ovod.png"/> </a></th>
+    </tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+
+
+<h2 align="left"><a name="visualization" id="visualization"></a>Visualization of Open-Vocabulary Part Segmentation</h2>
+<p align="left">Beyond open-vocabulary object detection, we propose that the detector should be able to predict both objects and their parts. This open-world fine-grained recognition ability is in demand for an intelligent vision system but is only realized in a limited number of categories up to now. In this paper, we move forward to going denser with open-vocabulary part segmentation: Left figure shows segmenting dog and its parts in different granularities. Right figure demonstrates more visualization results. </p>
+<table  width="1200" align="center">
+<tbody>
+    <tr>
+        <th> <a href="assets/boom.png" target="_blank"><img width="1200" src = "assets/boom.png"/> </a></th>
+    </tr>
+</tbody>
+</table>
+
+
+    
+<p>&nbsp;</p>
+<h2 align="left"><a name="applications" id="applications"></a>Applications of Open-Vocabulary Part Segmentation</h2>
+<p align="left">We provide two real applications of part segmentation: part-level robotic manipulation and part-level image editing. (1) For part-level robotic manipulation, we first locate the part segmentation, for example, <b>cup handle</b>, and then drive the robot gripper to grasp the cup handle. (2) For part-level image editing, we first obtain text-prompt part segmentation in the image, for example, <b>dog body</b>, and then use the in-painting version of Stable Diffusion to accomplish the inference.</p>
+<table  width="1200" align="center">
+    <tbody>
+         <tr>
+             <th align="center"><video width="700" controls autoplay muted playsinline loop="loop">
+      <source src="assets/grasp.mp4" type="video/mp4"></video></th>
+
+            <th align="center"> <a href="assets/edit.png" target="_blank">
+            <img width="430" src = "assets/edit.png"/> </a>
+            </th >
+        </tr>
+
+    </tbody>
+</table>
+
+    
+<p>&nbsp;</p>
+<h2>Source Code</h2>
+<p>Our code is public in <a href="https://github.com/anonymous-vlpart/VLPart" target="_blank">Link</a>.</p>
+
+    
+</div>
+</body></html>
